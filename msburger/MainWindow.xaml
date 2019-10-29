@@ -7,6 +7,51 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="134*"/>
+            <RowDefinition Height="285*"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="81,110,471,47" Grid.RowSpan="2">
+            <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="80" Source="assets/bg1.png"/>
+            <Image HorizontalAlignment="Left" Height="60" Margin="117,0,0,0" VerticalAlignment="Top" Width="80" Source="assets/bg2.png"/>
+            <Image HorizontalAlignment="Left" Height="60" Margin="0,144,0,0" VerticalAlignment="Top" Width="80" Source="assets/bg3.png"/>
+            <Image HorizontalAlignment="Left" Height="60" Margin="117,144,0,0" VerticalAlignment="Top" Width="80" Source="assets/bg4.png"/>
+            <Button Content="tambahkan" HorizontalAlignment="Left" Margin="5,82,0,0" VerticalAlignment="Top" Width="75" Click="onButtonCheesyClicked"/>
+            <Button Content="tambahkan" HorizontalAlignment="Left" Margin="117,82,0,0" VerticalAlignment="Top" Width="75" Click="onButtonWowClicked"/>
+            <Button Content="tambahkan" HorizontalAlignment="Left" Margin="5,230,0,-21" VerticalAlignment="Top" Width="75" Click="onButtonOrioClicked"/>
+            <Button Content="tambahkan" HorizontalAlignment="Left" Margin="122,230,0,-21" VerticalAlignment="Top" Width="75" Click="onButtonEcoClicked"/>
+            <Label Content="Cheesy Rp.25.000" HorizontalAlignment="Left" Margin="5,52,0,0" VerticalAlignment="Top" FontSize="8"/>
+            <Label Content="Wow Rp.23.000" HorizontalAlignment="Left" Margin="120,52,0,0" VerticalAlignment="Top" FontSize="8"/>
+            <Label Content="Orio Rp.27.000" HorizontalAlignment="Left" Margin="5,204,0,0" VerticalAlignment="Top" FontSize="8"/>
+            <Label Content="Eco Rp.15.000" HorizontalAlignment="Left" Margin="130,204,0,0" VerticalAlignment="Top" FontSize="8"/>
+
+        </Grid>
+        <ListBox x:Name="listBoxCart" HorizontalAlignment="Left" Height="146" Margin="380,28,0,0" VerticalAlignment="Top" Width="286" Grid.Row="1">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="75" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding title}" TextAlignment="Left" />
+                        <TextBlock Grid.Column="2" Text="{Binding priceString}"  TextAlignment="Right" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Content="Total" HorizontalAlignment="Left" Margin="380,187,0,0" VerticalAlignment="Top" Grid.Row="1" Height="26" Width="35"/>
+        <ComboBox  x:Name="comboBoxCoupon" HorizontalAlignment="Left" Margin="523,110,0,0" VerticalAlignment="Top" Width="143" SelectionChanged="isCouponSelected" Height="22">
+            <ComboBoxItem Tag="merdeka" >Merdeka 17%</ComboBoxItem>
+            <ComboBoxItem Tag="sumpahpemuda">Sumpah Pemuda</ComboBoxItem>
+            <ComboBoxItem Tag="nkrisatu">NKRI Satu</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Kupon" HorizontalAlignment="Left" Margin="380,106,0,0" VerticalAlignment="Top" Height="26" Width="45"/>
+        <Label x:Name="labelNoteCoupon" Background="Yellow" Content="Keterangan kupon" HorizontalAlignment="Left" Margin="523,2,0,0" VerticalAlignment="Top" Width="143" FontSize="7" FontStyle="Italic" Height="19" Grid.Row="1"/>
+        <Label x:Name="labelTotalNett" Content="Rp.0,00" HorizontalAlignment="Left" Margin="617,187,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Row="1" Height="26" Width="52"/>
+        <Label Content="Ms. Burger" HorizontalAlignment="Left" Margin="60,24,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" FontFamily="Segoe UI Black" Height="42" Width="141"/>
+        <Label Content="Point of sales" HorizontalAlignment="Left" Margin="201,40,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="8" FontFamily="Segoe Print" Height="24" Width="63"/>
+        <Separator HorizontalAlignment="Left" Height="15" Margin="56,69,0,0" VerticalAlignment="Top" Width="698" Background="#FFE4E4E4"/>
+
     </Grid>
 </Window>
